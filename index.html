@@ -20,18 +20,19 @@
   --accent-ink: #FFFFFF;
   --accent-soft: #DDEFEF;
   --warm: #D9902A;
+  --warm-soft: #FBF0DC;
   --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0D1519; --surface: #141F25; --ink: #E5EEF0; --muted: #94A7AE; --line: #26363E;
-    --accent: #5CC4C4; --accent-ink: #08201F; --accent-soft: #1A3A3E; --warm: #E8B058; color-scheme: dark;
+    --accent: #5CC4C4; --accent-ink: #08201F; --accent-soft: #1A3A3E; --warm: #E8B058; --warm-soft: #3A2E17; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0D1519; --surface: #141F25; --ink: #E5EEF0; --muted: #94A7AE; --line: #26363E;
-  --accent: #5CC4C4; --accent-ink: #08201F; --accent-soft: #1A3A3E; --warm: #E8B058; color-scheme: dark;
+  --accent: #5CC4C4; --accent-ink: #08201F; --accent-soft: #1A3A3E; --warm: #E8B058; --warm-soft: #3A2E17; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.7; word-break: keep-all; }
@@ -59,7 +60,9 @@ a { color: inherit; }
 h1, h2 { text-wrap: balance; margin: 0; font-weight: 700; letter-spacing: -.01em; }
 h1 { font-size: clamp(26px, 4.4vw, 36px); line-height: 1.3; }
 h2 { font-size: clamp(22px, 3.4vw, 28px); line-height: 1.35; }
-.fine { margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+.warn { margin: 22px 0 0; padding: 14px 16px; border: 1.5px solid var(--warm); border-radius: 10px; background: var(--warm-soft); font-size: 15px; line-height: 1.65; }
+.warn b { display: block; font-size: 13px; letter-spacing: .04em; margin-bottom: 2px; }
+.warn span { font-weight: 700; }
 .sub { margin: 12px 0 0; font-size: 17px; font-weight: 700; color: var(--accent); }
 .lead { color: var(--muted); font-size: 16px; margin: 14px 0 0; max-width: 64ch; }
 h3 { font-size: 14px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
@@ -152,6 +155,7 @@ body{margin:0}
         <h1>2026 AI@Home 교강사 연수<br>학습 지원 안내</h1>
         <p class="sub">국가공인 지능형홈관리사 자격검정 응시를 위한 학습 지원 도구</p>
         <p class="lead">본 안내서는 국가공인 지능형홈관리사 자격검정 응시를 준비하는 교강사 연수 참여자를 위한 학습 지원 자료입니다. 검정요강과 시험 접수부터 필기, 실기, 온라인 강의까지 필요한 자료를 이 페이지에서 확인하실 수 있으며, 아래 순서에 따라 학습하시기 바랍니다.</p>
+        <div class="warn"><b>이용 제한</b><span>본 자료는 자격시험 학습 이외의 모든 목적으로 사용할 수 없으며, 무단 복제, 배포 및 외부 게시를 금지합니다.</span></div>
         <ol class="flow">
           <li><span class="n">1</span><div><div class="t">검정요강 및 시험 접수</div><div class="s">시험 일정, 시험 방식 및 접수</div></div></li>
           <li><span class="n">2</span><div><div class="t">필기 문제 풀이</div><div class="s">전자문제집을 활용한 문제 풀이</div></div></li>
@@ -160,7 +164,6 @@ body{margin:0}
           <li class="aux"><span class="n">보조</span><div><div class="t">학습 시뮬레이터</div><div class="s">보조 자료 (필수 단계 아님)</div></div></li>
         </ol>
         <div class="note"><b>안내.</b> 1차 강의에 연수 전체 안내(오리엔테이션)가 포함되어 있습니다. 먼저 시청하시기 바랍니다.</div>
-        <p class="fine">본 자료는 교강사 연수 및 자격증 학습 이외의 모든 목적으로 사용할 수 없으며, 무단 복제, 배포 및 외부 게시를 금지합니다.</p>
       </section>
 
       <section data-id="rules" data-title="검정요강 및 시험 접수" hidden>
@@ -266,7 +269,7 @@ body{margin:0}
         <dl class="contact">
           <dt>이메일</dt><dd><span class="mono" id="mailText">icqapower@gmail.com</span><button class="copy" id="copyBtn" type="button">복사</button></dd>
         </dl>
-        <div class="note"><b>이용 제한.</b> 본 자료는 교강사 연수 및 자격증 학습 이외의 모든 목적으로 사용할 수 없습니다.</div>
+        <div class="warn"><b>이용 제한</b><span>본 자료는 자격시험 학습 이외의 모든 목적으로 사용할 수 없으며, 무단 복제, 배포 및 외부 게시를 금지합니다.</span></div>
         <p class="provider">제공 · 한국정보통신자격협회(ICQA) 전략기획팀 김철재 팀장</p>
       </section>
 
